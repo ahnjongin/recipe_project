@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="common.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <img class="logo" src="./img/logo.svg" alt="" />
+    </header>
+    <div class="banner-con">
+      <div class="banner"><img src="./img/Banner.svg" alt="" /></div>
+    </div>
+    <div class="input">
+      <input
+        type="text"
+        placeholder="음식 이름 또는 재료로 검색하세요"
+        class="search-bar"
+      />
+      <button><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+    <section class="category-section">
+      <div class="category-head">카테고리</div>
+      <div class="category">
+        <button class="category-item" data-category="all">
+          <img src="./img/전체.svg" alt="" />전체
+        </button>
+        <button class="category-item" data-category="밥">
+          <img src="./img/bob.svg" alt="" />밥
+        </button>
+        <button class="category-item" data-category="반찬">
+          <img src="./img/sausages.svg" alt="" />반찬
+        </button>
+        <button class="category-item" data-category="국">
+          <img src="./img/soup.svg" alt="" />국/찌개
+        </button>
+        <button class="category-item" data-category="일품">
+          <img src="./img/hot-plate.svg" alt="" />일품
+        </button>
+        <button class="category-item" data-category="후식">
+          <img src="./img/ice-cream.svg" alt="" />후식
+        </button>
+        <button class="category-item" data-category="기타">
+          <img src="./img/croissant.svg" alt="" />기타
+        </button>
+      </div>
+    </section>
+    <main>
+      <div class="recipe-num">
+        <span style="color: #ff8f00">1124</span>
+        <span>개의 레시피</span>
+      </div>
+      <ul class="listCon">
+        <!--  <li class="recipe-item">
+          <a href="detail.html"
+            ><img src="./img/food.svg" alt="" class="recipe-image" />
+            <div class="recipe-content">
+              <p class="recipe-title">저염으로 맛을 낸 황태해장국</p>
+              <div class="recipe-info">
+                <p class="kcal">100kcal</p>
+                <p class="food">국/찌개</p>
+              </div>
+            </div>
+          </a>
+        </li>-->
+      </ul>
+      <div class="pagination">
+        <div class="prev"><i class="fa-solid fa-chevron-left"></i></div>
+        <span class="page-number">1</span>
+        <span class="page-number">2</span>
+        <span class="page-number">3</span>
+        <span class="page-number">4</span>
+        <span class="page-number">5</span>
+        <div class="next"><i class="fa-solid fa-chevron-right"></i></div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="footer-box">
+        <a href="https://www.facebook.com/"
+          ><img src="./img/facebook.svg" alt="" /></a
+        ><a href="https://www.instagram.com/matzip_ahn/"
+          ><img src="./img/insta.svg" alt="" /></a
+        ><a href="https://www.naver.com/"
+          ><img src="./img/mail.svg" alt=""
+        /></a>
+      </div>
+    </footer>
+  </body>
+</html>

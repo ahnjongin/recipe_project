@@ -1,0 +1,251 @@
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+body {
+  font-family: "Pretendard-Regular", sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+li {
+  list-style: none;
+  text-decoration: none;
+}
+
+/* header */
+
+.header {
+  text-align: center;
+  background-color: #ffeace;
+}
+.logo {
+  width: 184px;
+  height: 56px;
+}
+.categories ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+.category-item {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #fff;
+  transition: background-color 0.3s;
+}
+.banner-con {
+  width: 80%;
+  margin: 20px auto 0 auto;
+  background-color: #ffe375;
+  padding: 0;
+  position: relative;
+}
+.banner {
+  background-color: #ffe375;
+  height: 176px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.banner img {
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+  width: auto;
+  position: absolute;
+}
+.input {
+  text-align: center;
+  padding: 32px 0 16px 0;
+}
+.input button {
+  height: 36px;
+  width: 36px;
+  background-color: #ff8f00;
+  border: none;
+  border-radius: 10px;
+}
+.input i {
+  color: white;
+}
+.search-bar {
+  width: 35%;
+  padding: 10px;
+  box-shadow: 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* category */
+
+.category-section {
+  text-align: center;
+}
+.category-head {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 800;
+  padding: 16px 0;
+}
+.category {
+  width: 100%;
+  padding: 16px 10%;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.category-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+.category-item {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  background-color: white;
+}
+.category :hover {
+  background-color: #ffeace;
+}
+.category button {
+  border: 1px solid #ff8f00;
+}
+.category img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+
+/* ul */
+.recipe-num {
+  padding: 16px 10%;
+}
+
+.listCon {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8em;
+  padding: 0 10%;
+}
+.listCon > li {
+  border: 1px solid rgb(224, 224, 224);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  position: relative;
+}
+
+.recipe-image {
+  width: 100%;
+  border-radius: 8px 8px 0 0;
+}
+.recipe-item {
+  list-style: none;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+}
+.recipe-content {
+  padding: 16px;
+  width: 100%;
+}
+
+.recipe-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.recipe-title {
+  font-size: 16px;
+  margin-bottom: 8px;
+  font-weight: 900;
+  color: black;
+}
+
+.kcal {
+  color: black;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.food {
+  background-color: #ff8f00;
+  color: white;
+  border-radius: 15px;
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+/* pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 48px;
+  gap: 8px;
+}
+.pagination div {
+  cursor: pointer;
+  margin: 2px 16px 2px 16px;
+}
+.page-number {
+  color: black;
+  background-color: #c6c8c6;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.pagination .page-number.active {
+  font-weight: bold;
+  background-color: #ffa500;
+  color: white;
+}
+
+.pagination .prev,
+.pagination .next {
+  cursor: pointer;
+}
+
+.pagination .prev.disabled,
+.pagination .next.disabled {
+  cursor: not-allowed;
+  color: #ccc;
+}
+
+/* footer */
+.footer {
+  background-color: #ffeace;
+  text-align: end;
+  padding: 8px;
+}
+.footer-box a {
+  padding: 8px;
+  margin-right: 16px;
+}

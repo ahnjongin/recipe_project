@@ -1,0 +1,215 @@
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+body {
+  font-family: "Pretendard-Regular", sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.header {
+  text-align: center;
+  background-color: #ffeace;
+}
+.logo {
+  width: 184px;
+  height: 56px;
+}
+.main-wrap {
+  margin: 0 10%;
+}
+
+/* title */
+.title {
+  padding: 32px;
+  border-bottom: 2px solid #c6c8c6;
+}
+
+.food {
+  background-color: #ff8f00;
+  color: white;
+  border-radius: 15px;
+  padding: 4px 8px;
+  font-size: 12px;
+  width: 56px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+.title span {
+  font-size: 24px;
+}
+
+.food-wrap {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* image section */
+
+.image-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 80px;
+  margin-top: 32px;
+}
+.image-section img {
+  width: 652px;
+  height: 386px;
+  object-fit: cover;
+}
+
+h1 {
+  margin: 32px;
+}
+.nutrition-facts {
+  background-color: white;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  margin: 16px;
+  margin-top: 32px;
+}
+
+.nutrition-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.nutrition-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.nutrition-row:last-child {
+  border-bottom: none;
+}
+
+.nutrition-label {
+  font-size: 16px;
+  color: #555;
+}
+
+.nutrition-value {
+  font-size: 16px;
+  color: #333;
+  font-weight: bold;
+}
+.ingredient-section {
+  display: flex;
+  flex-direction: column;
+}
+.ingredient ul {
+  list-style: none;
+  text-decoration: none;
+}
+.ingredient li {
+  margin-bottom: 8px;
+  padding: 8px 0 8px 0;
+}
+.ingredient input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #ffa500;
+  margin-right: 10px;
+  accent-color: #ffa500;
+}
+.ingredient input[type="checkbox"]:checked {
+  background-color: #ffa500;
+  border-color: #ffa500;
+  position: relative;
+}
+
+.ingredient input[type="checkbox"]::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 4px;
+  width: 4px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.cooking-tips {
+  background-color: #ffe4c4;
+  padding: 16px;
+  border-radius: 8px;
+  margin-top: 48px;
+  width: 300px;
+  margin: 16px;
+  margin: 10% 0;
+}
+.cooking-tips h3 {
+  margin: 16px;
+}
+
+.tag h3 {
+  margin-bottom: 16px;
+}
+
+/* steps */
+.steps {
+  margin: 0 4%;
+}
+.steps h3 {
+  padding: 24px 0 24px 0;
+}
+.step {
+  display: flex;
+}
+.step div {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  color: white;
+  background-color: #ff8f00;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  padding-top: 2px;
+  font-weight: bold;
+  margin-right: 16px;
+}
+.step span {
+  margin-left: 40px;
+  display: flex;
+}
+.back {
+  margin: 5%;
+  display: flex;
+  justify-content: flex-end;
+}
+.backbutton {
+  background-color: #ff8f00;
+  color: white;
+  width: 80px;
+  height: 32px;
+  border: none;
+  cursor: pointer;
+}
+
+/* footer */
+.footer {
+  background-color: #ffeace;
+  text-align: end;
+  padding: 8px;
+}
+.footer-box a {
+  padding: 8px;
+  margin-right: 16px;
+}
