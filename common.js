@@ -2,11 +2,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const API_KEY = "a5850b5d70524186b8c0";
   const SERVICE_ID = "COOKRCP01";
   const DATA_TYPE = "json";
-  let pagesize = 9;  //한번에 표시할 레시피 개수
-  let currentPage = 1; //현재 표시할 페이지
-  let groupSize = 9;   //페이지네이션에 표기할 페이지 개수
+  let pagesize = 9;
+  let totalRecipes = 1124;
+  let totalPages = Math.ceil(totalRecipes / pagesize);
+  let currentPage = 1;
+  let groupSize = 9;
 
-  let currentCategory = "all"; 
+  let currentCategory = "all";
   let currentQuery = null;
 
   //카테고리 버튼 클릭 시 함수
@@ -14,10 +16,15 @@ document.addEventListener("DOMContentLoaded", () => {
   categoryButtons.forEach((button) => {
     button.addEventListener("click", (e) => {
       const category = e.currentTarget.getAttribute("data-category");
+      console.log("Selected category:", category);
       currentCategory = category;
       currentPage = 1;
       createHtml();
       renderPagination();
+      fetch("http://localhost:3000/api/data")
+        .then((response) => response.json())
+        .then((data) => console.log(data))
+        .catch((error) => console.error("Error:", error));
     });
   });
 
@@ -33,10 +40,14 @@ document.addEventListener("DOMContentLoaded", () => {
       currentPage = 1;
       createHtml();
       renderPagination();
+      fetch("http://localhost:3000/api/data")
+        .then((response) => response.json())
+        .then((data) => console.log(data))
+        .catch((error) => console.error("Error:", error));
     }
   });
 
-  // Enter 키로 검색 가능
+  // Enter 키로 검색
   searchBar.addEventListener("keypress", (e) => {
     if (e.key === "Enter") {
       searchButton.click();
@@ -55,25 +66,29 @@ document.addEventListener("DOMContentLoaded", () => {
       } else if (category !== "all" && category !== null) {
         url += `/RCP_PAT2=${encodeURIComponent(category)}`;
       }
+
+      console.log("API Request URL:", url);
       const res = await fetch(url);
       const data = await res.json();
 
+      console.log("API Response Data:", data);
+
       if (data.COOKRCP01 && data.COOKRCP01.row) {
-        // 전체 레시피 개수를 업데이트
         updateRecipeCount(data.COOKRCP01.total_count);
         return data.COOKRCP01.row;
       } else {
         console.error("No data found in API response");
-        updateRecipeCount(0); // 레시피가 없을 경우 0으로 업데이트
+        updateRecipeCount(0);
         return [];
       }
     } catch (e) {
       console.error(e);
-      updateRecipeCount(0); // 에러가 발생한 경우 0으로 업데이트
+
       return [];
     }
   };
 
+  //레시피 개수
   const updateRecipeCount = (count) => {
     const recipeNum = document.querySelector(".recipe-num span");
     recipeNum.innerHTML = count;
@@ -109,6 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
         listCon.appendChild(recipeItem);
       });
     } else {
+      updateRecipeCount(0);
       console.log("No recipes found.");
       listCon.innerHTML = "<p>레시피를 찾을 수 없습니다.</p>";
     }
@@ -161,7 +177,6 @@ document.addEventListener("DOMContentLoaded", () => {
       paginationContainer.appendChild(nextButton);
     }
   };
-
   createHtml();
   renderPagination();
 });
