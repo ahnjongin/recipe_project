@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const startIDX = (pageNum - 1) * pagesize + 1;
       const endIDX = pageNum * pagesize;
 
-      let url = `http://openapi.foodsafetykorea.go.kr/api/${API_KEY}/${SERVICE_ID}/${DATA_TYPE}/${startIDX}/${endIDX}`;
+      let url = `https://openapi.foodsafetykorea.go.kr/api/${API_KEY}/${SERVICE_ID}/${DATA_TYPE}/${startIDX}/${endIDX}`;
 
       if (query) {
         url += `/RCP_PARTS_DTLS=${encodeURIComponent(query)}`;
